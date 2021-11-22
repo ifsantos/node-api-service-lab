@@ -1,2 +1,6 @@
 # node-api-service-lab
-Exploring NodeJS on a Service API 
+Exploring Typescript on a Service API
+
+Dependencies
+ - Typescript
+ - Express
