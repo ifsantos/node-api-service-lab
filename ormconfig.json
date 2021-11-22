@@ -1,8 +1,14 @@
 {
     "type":"mysql",
-    "database": "./src/database/database.mysql",
-    "migrations": "./src/database/migrations/*.ts",
+    "host":"localhost",
+    "port":"3306",
+    "username":"user",
+    "password":"pass",
+    "database": "node-lab",
+    "migrations": ["./src/database/migrations/*.ts"],
+    "entities":["./src/entities/*.ts"],
     "cli":{
-        "migrationsDir":"./src/database/migrations"
+        "migrationsDir":"./src/database/migrations/",
+        "entitiesDir":"./src/entities/"
     }
 }
