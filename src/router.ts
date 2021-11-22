@@ -8,7 +8,8 @@ router.get('/', (request:Request, response:Response) => {
     response.json( { mensagem : 'Welcome to the jungle' } )
 })
 
-router.get('/user', createUserCOntroller.handle)
+router.post('/user', createUserCOntroller.handle)
+//outer.get('/user', createUserCOntroller.handle)
 
 
 export { router }

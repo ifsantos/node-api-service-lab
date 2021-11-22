@@ -1,17 +1,20 @@
-import {Request, Response} from 'express';
+import {Request, response, Response} from 'express';
 
 class CreateUserController{
     handle(request:Request, response:Response){
-        response.json([
-            {
-            user: 'johny cage'
-            },
-            {
-                user: 'spiderman'
-            },
-            {
-                user: 'dhalsim'
-            }])
+
+        const user = request.body.name;
+        if (user){
+            response.status(201).json(
+                {
+                    msg: `User ${user} created successfully.` 
+                })
+        } else {
+            response.status(400).json(
+                {
+                    msg: `Please provide an user name` 
+                })
+        }
     }
 }
 

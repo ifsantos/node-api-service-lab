@@ -6,6 +6,7 @@ function sum (numero : number){
 }
 const server = express();
 
+server.use(express.json())
 server.use(router)
 
 const port  = sum(4999);
