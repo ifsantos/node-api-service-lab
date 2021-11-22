@@ -1,9 +1,9 @@
+import 'reflect-metadata';
 import express, {Request, Response} from 'express';
 import {router} from './router'
+import createConnection from './database'
 
-function sum (numero : number){
-    return numero + 1;
-}
+createConnection()
 const server = express();
 
 server.use(express.json())
@@ -15,4 +15,7 @@ server.listen(port, () => {
 })
 
 
-     
+// dummy function
+function sum (numero : number){
+    return numero + 1;
+}
