@@ -1,0 +1,29 @@
+{
+  "name": "node-api-service-lab",
+  "version": "1.0.0",
+  "description": "Exploring NodeJS on a Service API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifsantos/node-api-service-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ifsantos/node-api-service-lab/issues"
+  },
+  "homepage": "https://github.com/ifsantos/node-api-service-lab#readme",
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1",
+    "ts-node-dev": "^1.1.8"
+  }
+}
