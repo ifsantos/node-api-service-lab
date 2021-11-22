@@ -1,18 +1,16 @@
 import express, {Request, Response} from 'express';
+import {router} from './router'
 
-function soma (numero : number){
+function sum (numero : number){
     return numero + 1;
 }
-console.log(soma(5));
-
 const server = express();
 
-server.get('/', (request:Request, response:Response)=>{
-    response.json({mensagem:'Welcome to the jungle'})
-})
+server.use(router)
 
-server.listen(5000, () => {
-    console.log("Server running on port 5000")
+const port  = sum(4999);
+server.listen(port, () => {
+    console.log("Server running on port "+port)
 })
 
 
