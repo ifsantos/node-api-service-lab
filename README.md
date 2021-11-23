@@ -1,6 +1,10 @@
 # node-api-service-lab
-Exploring Typescript on a Service API
+Exploring Typescript and TypeORM on a Service API
 
 Dependencies
  - Typescript
  - Express
+ - TypeORM
+ - UUID
+ - Jest
+ 
