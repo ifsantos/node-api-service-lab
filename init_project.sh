@@ -20,5 +20,11 @@ npm i jest @types/jest ts-jest --also=dev
 # To run Jest tests easily, install vscode-jest-runner plugin from store
 # or cl: npm test
 
+# MySQL config to connect from NodeJS+TypeORM:
+# alter USER 'foo'@'%' IDENTIFIED WITH mysql_native_password BY 'bar';
+# FLUSH PRIVILEGES;    
+# create schema nodelab;
+# grant all privileges on nodelab.* to foo;
+
 # To run it on dev: 
 npm run dev

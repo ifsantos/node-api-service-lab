@@ -1,10 +1,11 @@
+import { CreateUserController } from './CreateUserController';
 
 describe('CreateUserController', () => {
-    const a = 2
-    const b = 3
+   
 
-    it ("Should be five", () => {
+    it ("Should return created user id", () => {
 
-        expect(a+b).toBe(5)
+        const createUserController = new CreateUserController()
+        const result = createUserController.handle()
     })
 })
