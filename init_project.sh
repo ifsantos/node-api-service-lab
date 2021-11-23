@@ -17,5 +17,8 @@ npm i jest @types/jest ts-jest --also=dev
 # Set on package.json
 # scripts: { dev: "ts-node-dev index.ts", ... }
 
+# To run Jest tests easily, install vscode-jest-runner plugin from store
+# or cl: npm test
+
 # To run it on dev: 
 npm run dev
