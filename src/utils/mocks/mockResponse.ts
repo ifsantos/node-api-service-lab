@@ -7,17 +7,17 @@ export type MockResponse<TResult> = Response & {
     }
 }
 
-export function makeMockResponse<TReseult>(){
+export function makeMockResponse<TResult>(){
     const response = {
         state: {}
 
-    } as MockResponse<TReseult>;
+    } as MockResponse<TResult>;
 
     response.status = (status : number) => {
         response.state.status = status;
         return response;
     }
-    response.json = (json : TReseult) => {
+    response.json = (json : TResult) => {
         response.state.json = json;
         return response;
     }
