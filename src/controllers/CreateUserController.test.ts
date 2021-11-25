@@ -12,13 +12,13 @@ describe('CreateUserController', () => {
     afterAll(async () => {
         const connection = getConnection();
         await connection.query('DELETE FROM USERS')
-        connection.close();
+        await connection.close();
     })
 
     const createUserController = new CreateUserController();
     const response = makeMockResponse();
 
-    it ("Should return 201 if created user", async () => {
+    it ("Must return 201 if created user", async () => {
         const request = {
             body: {
                 name: 'someuser',
@@ -30,7 +30,7 @@ describe('CreateUserController', () => {
         expect(response.state.status).toBe(201)
     })
     
-    it ('Should return 400 if name is blank', async () => {
+    it ('Must return 400 if name is blank', async () => {
         const request = {
             body: {
                 name: '',
@@ -42,7 +42,7 @@ describe('CreateUserController', () => {
         expect(response.state.status).toBe(400)
     })
     
-    it ("Should return 201 if emails is blank", async () => {
+    it ("Must return 201 if email is blank", async () => {
         const request = {
             body: {
                 name: 'someuser',

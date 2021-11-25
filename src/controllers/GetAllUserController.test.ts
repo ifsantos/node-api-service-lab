@@ -12,8 +12,8 @@ describe('GetAllUserController', () => {
     })
     afterAll( async () => {
         const conn = getConnection()
-        conn.query('DELETE FROM USERS');
-        conn.close()
+        await conn.query('DELETE FROM USERS');
+        await conn.close()
     })
     const fakeData = new FakeData();
 
