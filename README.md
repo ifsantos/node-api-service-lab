@@ -11,4 +11,5 @@ Dependencies
  
 
  Help pages:
+ - <https://typeorm.io>
  - <https://stackoverflow.com/questions/25112510/how-to-set-environment-variables-from-within-package-json>
