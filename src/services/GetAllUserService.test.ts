@@ -1,8 +1,7 @@
 import { getConnection } from "typeorm";
 import createConnection from "../database";
-import { CreateUserService } from "./CreateUserService";
 import { GetAllUserService } from './GetAllUserService';
-import { v4 as uuid }  from 'uuid';
+import { FakeData } from '../utils/fakeData/FakeData';
 
 describe('GetAllUserService', () => {
     beforeAll( async () => {
@@ -15,18 +14,10 @@ describe('GetAllUserService', () => {
         await conn.close();
     })
 
+    const fakeData = new FakeData();
+
     it ('Should return all users', async () => {
-        const createUserService = new CreateUserService();
-        await createUserService.execute({
-            id: uuid(),
-            name: 'someuser',
-            email: 'so@mail.com'
-        })
-        await createUserService.execute({
-            id: uuid(),
-            name: 'otheruser',
-            email: 'other@mail.com'
-        })
+        await fakeData.execute()
         const expectedResponse = [
             { 
                 name: 'someuser',
