@@ -1,0 +1,24 @@
+import { getRepository } from "typeorm"
+import { User } from "../entities/User"
+
+interface IUser{
+    id: string
+}
+
+
+class DeleteUserService {
+    async execute( { id }:IUser ) {
+        const user = await getRepository(User)
+        .createQueryBuilder()
+        .delete()
+        .where('id = :id',{id})
+        .execute()
+
+        console.log(user)
+
+        return user.raw
+    }
+
+}
+
+export { DeleteUserService }
