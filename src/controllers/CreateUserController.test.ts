@@ -10,7 +10,7 @@ describe('CreateUserController', () => {
         //await connection.runMigrations()
     })
     afterAll(async () => {
-        const connection = await getConnection();
+        const connection = getConnection();
         await connection.query('DELETE FROM USERS')
         connection.close();
     })
