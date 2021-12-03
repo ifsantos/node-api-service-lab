@@ -4,6 +4,7 @@
   "description": "Exploring NodeJS on a Service API",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node src/index.ts",
     "dev": "ts-node-dev src/index.ts",
     "test": "cross-env NODE_ENV='test' jest",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.ts"
