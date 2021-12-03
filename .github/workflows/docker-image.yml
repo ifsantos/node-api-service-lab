@@ -15,7 +15,7 @@ jobs:
     - name: Build the Docker image
       env:
         date_now: $(date +%s) 
-      run: docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod | docker push ghcr.io/ifsantos/node-api-service-lab:latest
+      run: docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod & docker push ghcr.io/ifsantos/node-api-service-lab:latest
 
   publish:
     runs-on: ubuntu-latest
