@@ -14,8 +14,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       env:
-         date_now:$(date +%s) 
-      run: docker build . --file Dockerfile --tag ghcr.io/ifsantos/node-api-service-lab:prod:"$date_now" | docker push ghcr.io/ifsantos/node-api-service-lab:prod:"$date_now"
+        date_now: $(date +%s) 
+      run: docker build . --file Dockerfile --tag ghcr.io/ifsantos/node-api-service-lab:prod:"$date_now" & docker push ghcr.io/ifsantos/node-api-service-lab:prod:"$date_now"
 
   publish:
     runs-on: ubuntu-latest
@@ -23,6 +23,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish the Built Docker image
-    env:
-         date_now:$(date +%s) 
-      run: ls | echo 'Done' | echo "$date_now"
+      env:
+        date_now: $(date +%s) 
+      run: ls & echo 'Done' & echo "$date_now"
