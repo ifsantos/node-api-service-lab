@@ -16,7 +16,8 @@ jobs:
       env:
         date_now: $(date +%s) 
         git_hash: $(expr substr "$GITHUB_SHA" 0 5)
-      run: echo 'build starting= ${env.GITHUB_SHA} ${env.git_hash} "$env.GITHUB_SHA"' & docker build . --build-arg COMMIT_ID=${GITHUB_SHA} -t ghcr.io/ifsantos/node-api-service-lab:prod & echo 'build done! ${git_hash}' & docker push ghcr.io/ifsantos/node-api-service-lab:latest
+        go: "Go!"
+      run: echo 'build starting= ${go} ${env.go} "$env.go"' & docker build . --build-arg COMMIT_ID=1 -t ghcr.io/ifsantos/node-api-service-lab:prod & echo 'build done! ${git_hash}' & docker push ghcr.io/ifsantos/node-api-service-lab:latest
 
   publish:
     runs-on: ubuntu-latest
