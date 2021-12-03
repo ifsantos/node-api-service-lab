@@ -1,6 +1,12 @@
 # node-api-service-lab
 Exploring Typescript and TypeORM on a Service API
 
+### News: 
+
+<img align="left" alt="Docker" width="26px" src="https://raw.githubusercontent.com/github/explore/main/topics/docker/docker.png" /> _ Now it's Docker enabled : )
+
+<br />
+
 Dependencies
  - Typescript
  - Express
