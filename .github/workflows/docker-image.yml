@@ -15,7 +15,7 @@ jobs:
     - name: Build the Docker image
       env:
         date_now: $(date +%s) 
-      run: docker build . --file Dockerfile --tag ghcr.io/ifsantos/node-api-service-lab:"$date_now" & docker push ghcr.io/ifsantos/node-api-service-lab:"$date_now"
+      run: docker build . --file Dockerfile --tag node-api-service-lab:"$date_now" & docker push ghcr.io/ifsantos/node-api-service-lab:"$date_now"
 
   publish:
     runs-on: ubuntu-latest
