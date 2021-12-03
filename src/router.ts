@@ -11,7 +11,9 @@ const updateUserController = new UpdateUserController();
 const deleteUserController = new DeleteUserController();
 
 router.get('/', (request:Request, response:Response) => {
-    response.json( { mensagem : 'Welcome to the jungle' } )
+    const commit = process.env.COMMIT_ID || 'unknown'
+    response.json( { mensagem : 'Welcome to the jungle - ' + commit } )
+    console.log(commit)
 })
 
 router.post('/user', createUserController.handle)
