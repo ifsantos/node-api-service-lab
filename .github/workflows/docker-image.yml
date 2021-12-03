@@ -15,7 +15,8 @@ jobs:
     - name: Build the Docker image
       env:
         date_now: $(date +%s) 
-      run: docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod & docker push ghcr.io/ifsantos/node-api-service-lab:latest
+        git_hash: $(git rev-parse --short "$GITHUB_SHA")
+      run: docker build . --build-arg COMMIT_ID=$git_hash -t ghcr.io/ifsantos/node-api-service-lab:prod & echo 'build done! $git_hash' & docker push ghcr.io/ifsantos/node-api-service-lab:latest
 
   publish:
     runs-on: ubuntu-latest
