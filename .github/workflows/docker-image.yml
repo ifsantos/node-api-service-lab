@@ -17,7 +17,7 @@ jobs:
         date_now: $(date +%s)
         git_hash: $(expr substr "$GITHUB_SHA" 0 5)
         go: "Go!"
-      run: docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod  &&  docker push ghcr.io/ifsantos/node-api-service-lab:latest
+      run: docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod  &&  docker push ghcr.io/ifsantos/node-api-service-lab:prod
 
   publish:
     runs-on: ubuntu-latest
