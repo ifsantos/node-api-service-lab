@@ -19,7 +19,7 @@ jobs:
       run: echo ${{ env.GITHUB_SHA }} && docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod 
     
     - name: Docker login
-      run: docker login -u ${{env.GITHUB_ACTOR}} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+      run: docker login -u ifsantos -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
     
     - name: Push to publish package
       env: 
