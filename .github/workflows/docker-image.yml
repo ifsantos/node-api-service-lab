@@ -27,5 +27,6 @@ jobs:
     - name: Publish the Built Docker image
       env:
         date_now: $(date +%s)
+        git_hash: $(expr substr "$GITHUB_SHA" 0 5)
         go: "Go!"
-      run: ls & echo 'Done' & echo '${date_now}' & echo ${go}
+      run: ls & echo 'Done' & echo ${git_hash} & echo ${go} & echo 'Full sha ${{ GITHUB_SHA }}'
