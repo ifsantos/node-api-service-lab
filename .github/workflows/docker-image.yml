@@ -15,9 +15,16 @@ jobs:
     - name: Build the Docker image
       env:
         date_now: $(date +%s)
-        git_hash: $(expr substr "$GITHUB_SHA" 0 5)
-        go: "Go!"
-      run: docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod  && docker login -u ifsantos -p ${{ secrets.GITHUB_TOKEN }} ghcr.io && docker push ghcr.io/ifsantos/node-api-service-lab:prod 
+        git_hash: $(expr substr $env.GITHUB_SHA 0 5)
+      run: docker build . -t ghcr.io/ifsantos/node-api-service-lab:${{env.git_hash}} 
+    
+    - name: Docker login
+      run: docker login -u ${{env.GITHUB_ACTOR}} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+    
+    - name: Push to publish package
+      env: 
+        git_hash: $(expr substr $env.GITHUB_SHA 0 5)
+      run: docker push ghcr.io/ifsantos/node-api-service-lab:${{env.git_hash}}
 
   publish:
     runs-on: ubuntu-latest
