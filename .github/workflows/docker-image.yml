@@ -16,7 +16,7 @@ jobs:
       env:
         date_now: $(date +%s)
         git_hash: $(expr substr $env.GITHUB_SHA 0 5)
-      run: echo ${{GITHUB_SHA}} && docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod 
+      run: echo ${{ env.GITHUB_SHA }} && docker build . -t ghcr.io/ifsantos/node-api-service-lab:prod 
     
     - name: Docker login
       run: docker login -u ${{env.GITHUB_ACTOR}} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
